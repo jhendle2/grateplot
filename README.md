@@ -1,5 +1,5 @@
 # GratePlot
-##v1.0, 7/23/2020
+## v1.0, 7/23/2020
 
 Python 3 library for designing matrices with functional determined elements (aka grates)
 
