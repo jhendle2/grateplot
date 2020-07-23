@@ -16,7 +16,7 @@ Create a Grate object like so:
 For example, a grate of size 5x6 would be:
 `grate_5x6 = grate(5, 6)`
 
-##Step 2: Filling your Grate
+## Step 2: Filling your Grate
 Fill the grate with the following functions:
 
 `.fill(fill_value)`
@@ -29,8 +29,8 @@ __Note:__ Rules may be placed in the `rules.py` file for convenience,
 and should only contain the parameters `n` and `m` if they
 are to be used in `.fill_rule()`
 
-##Step 3: Outputting your Grate
-###Printing
+## Step 3: Outputting your Grate
+### Printing
 To print your grate, type the following:
 `print(test_grate)`
 
@@ -40,7 +40,7 @@ If you would like axes in your printing, use:
 You can also force the print to use a specific set of characters:
 `print(test_grate.__repr__(force_chars=['A', 'B', 'C']))`
 
-###Plotting
+### Plotting
 To plot your grate, you can use the following methods:
 
 `test_grate.plot_color(color, show_digits)`
