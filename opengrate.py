@@ -4,7 +4,7 @@ import rules
 import matplotlib.pyplot as plt
 
 
-class Grate:
+class grate:
 
     @staticmethod
     def zeroes(rows, cols):
@@ -53,7 +53,7 @@ class Grate:
             for c in range(self.cols):
                 self.set(r, c, rule(r, c))
 
-    def str_axes(self, force_chars):
+    def str_axes(self, force_chars=None):
         out = ""
         for r in range(self.rows):
             if r == 0:
@@ -68,7 +68,7 @@ class Grate:
             out += "\n"
         return out
 
-    def str_default(self, force_chars):
+    def str_default(self, force_chars=None):
         out = ""
         for r in self.grate:
             for c in r:
@@ -90,10 +90,15 @@ class Grate:
         plt.show()
         print("! Finished Plotting")
 
-    def plot_and_save(self, color=plt.cm.Blues, show_digits=False, file_name="plot.png", res=300):
+    def save(self, color=plt.cm.Blues, show_digits=False, file_name="plot.png", res=300):
         self.plot(color, show_digits)
         plt.savefig(file_name,dpi=res)
-        print("! Finished Plotting & Saving")
+        print("! Finished Saving")
+
+    def plot_and_save(self, color=plt.cm.Blues, show_digits=False, file_name="plot.png", res=300):
+        self.save(color, show_digits, file_name, res)
+        plt.show()
+        print("! Finished Plotting")
 
     def __repr__(self, axes=False, force_chars=None):
         if axes:
@@ -102,8 +107,12 @@ class Grate:
             return self.str_default(force_chars)
 
 
-g = Grate(500, 500)
-g.fill_rule(rules.n3_contains_m)
-# print(g.__repr__(axes=True, force_chars=['A', 'B', 'C']))
-# print(g.__repr__(axes=False, force_chars=None))
-g.plot_and_save(color=plt.cm.Greys, file_name="grate.png", res=900)
+def test():
+    g = grate(500, 500)
+    g.fill_rule(rules.n3_contains_m)
+    # print(g.__repr__(axes=True, force_chars=['A', 'B', 'C']))
+    # print(g.__repr__(axes=False, force_chars=None))
+    g.plot_and_save(color=plt.cm.Greys, file_name="grate.png", res=900)
+
+
+# test()
